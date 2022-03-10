@@ -7,7 +7,23 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
+    @IBOutlet weak var firstValueTextField: UITextField!
+
+    @IBOutlet weak var secondValueTextField: UITextField!
+
+    @IBOutlet weak var firstValueSwitch: UISwitch!
+
+    @IBOutlet weak var secondValueSwitch: UISwitch!
+
+    @IBOutlet weak var firstValueLabel: UILabel!
+
+    @IBOutlet weak var secondValueLabel: UILabel!
+
+    @IBOutlet weak var resultLabel: UILabel!
+
+    @IBAction func executeCalculation(_ sender: Any) {  
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

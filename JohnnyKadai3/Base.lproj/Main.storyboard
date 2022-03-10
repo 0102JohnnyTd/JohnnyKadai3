@@ -82,7 +82,10 @@
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CQ-Or-tce">
                                         <rect key="frame" x="0.0" y="145" width="382" height="31"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Calculation Button"/>
+                                        <connections>
+                                            <action selector="calculationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MUC-sL-F52"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lWe-LJ-plg">
                                         <rect key="frame" x="0.0" y="216" width="382" height="20.5"/>
@@ -125,6 +128,15 @@
                             <constraint firstItem="pWH-dm-LST" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="lI5-cF-s1e"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstValueLabel" destination="ApP-rP-F1l" id="JW9-rR-V3i"/>
+                        <outlet property="firstValueSwitch" destination="NgH-T9-vfo" id="Lgz-XF-djv"/>
+                        <outlet property="firstValueTextField" destination="g5O-4I-MeG" id="vPX-4F-jVa"/>
+                        <outlet property="resultLabel" destination="N4D-mo-m2L" id="Qut-CJ-IBP"/>
+                        <outlet property="secondValueLabel" destination="mk0-k9-wLP" id="Rxu-p4-mEX"/>
+                        <outlet property="secondValueSwitch" destination="XB3-nm-fmX" id="mVX-LS-rkB"/>
+                        <outlet property="secondValueTextField" destination="3QG-9y-Olo" id="EV9-MW-8Qw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
