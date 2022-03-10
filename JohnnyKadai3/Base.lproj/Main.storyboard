@@ -84,7 +84,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Calculation Button"/>
                                         <connections>
-                                            <action selector="calculationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MUC-sL-F52"/>
+                                            <action selector="executeCalculation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dCm-NB-uCN"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lWe-LJ-plg">
