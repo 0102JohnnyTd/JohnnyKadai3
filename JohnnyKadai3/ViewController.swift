@@ -7,13 +7,49 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
+    @IBOutlet private weak var firstValueTextField: UITextField!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBOutlet private weak var secondValueTextField: UITextField!
+
+    @IBOutlet private weak var firstValueSwitch: UISwitch!
+
+    @IBOutlet private weak var secondValueSwitch: UISwitch!
+
+    @IBOutlet private weak var firstValueLabel: UILabel!
+
+    @IBOutlet private weak var secondValueLabel: UILabel!
+
+    @IBOutlet private weak var resultLabel: UILabel!
+
+    @IBAction private func executeCalculation(_ sender: Any) {
+        let firstValue = switchSignFirstValue()
+        let secondValue = switchSignSecondValue()
+
+        firstValueLabel.text = String(firstValue)
+        secondValueLabel.text = String(secondValue)
+        resultLabel.text = String(firstValue + secondValue)
     }
 
+    private func switchSignFirstValue() -> Int  {
+        var firstValue = firstValueTextField.textToInt
 
+        guard !firstValueSwitch.isOn else {
+            firstValue *= -1
+            return firstValue
+        }
+        return firstValue
+    }
+
+    private func switchSignSecondValue() -> Int {
+        var secondValue = secondValueTextField.textToInt
+
+        guard !secondValueSwitch.isOn else {
+            secondValue *= -1
+            return secondValue
+        }
+        return secondValue
+    }
 }
+
 
