@@ -25,31 +25,27 @@ final class ViewController: UIViewController {
     @IBAction private func executeCalculation(_ sender: Any) {
         let firstValue = switchSignFirstValue()
         let secondValue = switchSignSecondValue()
-
         firstValueLabel.text = String(firstValue)
         secondValueLabel.text = String(secondValue)
+
         resultLabel.text = String(firstValue + secondValue)
     }
 
-    private func switchSignFirstValue() -> Int  {
-        var firstValue = firstValueTextField.textToInt
+    private func switchSignFirstValue() -> Int {
+        let firstValue = firstValueTextField.textToInt
 
         guard !firstValueSwitch.isOn else {
-            firstValue *= -1
-            return firstValue
+            return -firstValue
         }
         return firstValue
     }
 
     private func switchSignSecondValue() -> Int {
-        var secondValue = secondValueTextField.textToInt
+        let secondValue = secondValueTextField.textToInt
 
         guard !secondValueSwitch.isOn else {
-            secondValue *= -1
-            return secondValue
+            return -secondValue
         }
         return secondValue
     }
 }
-
-
