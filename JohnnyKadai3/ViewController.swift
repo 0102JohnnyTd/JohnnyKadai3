@@ -8,28 +8,48 @@
 import UIKit
 
 final class ViewController: UIViewController {
-    @IBOutlet weak var firstValueTextField: UITextField!
+    @IBOutlet private weak var firstValueTextField: UITextField!
 
-    @IBOutlet weak var secondValueTextField: UITextField!
+    @IBOutlet private weak var secondValueTextField: UITextField!
 
-    @IBOutlet weak var firstValueSwitch: UISwitch!
+    @IBOutlet private weak var firstValueSwitch: UISwitch!
 
-    @IBOutlet weak var secondValueSwitch: UISwitch!
+    @IBOutlet private weak var secondValueSwitch: UISwitch!
 
-    @IBOutlet weak var firstValueLabel: UILabel!
+    @IBOutlet private weak var firstValueLabel: UILabel!
 
-    @IBOutlet weak var secondValueLabel: UILabel!
+    @IBOutlet private weak var secondValueLabel: UILabel!
 
-    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet private weak var resultLabel: UILabel!
 
-    @IBAction func executeCalculation(_ sender: Any) {  
+    @IBAction private func executeCalculation(_ sender: Any) {
+        let firstValue = switchSignFirstValue()
+        let secondValue = switchSignSecondValue()
+
+        firstValueLabel.text = String(firstValue)
+        secondValueLabel.text = String(secondValue)
+        resultLabel.text = String(firstValue + secondValue)
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    private func switchSignFirstValue() -> Int  {
+        var firstValue = firstValueTextField.textToInt
+
+        guard !firstValueSwitch.isOn else {
+            firstValue *= -1
+            return firstValue
+        }
+        return firstValue
     }
 
+    private func switchSignSecondValue() -> Int {
+        var secondValue = secondValueTextField.textToInt
 
+        guard !secondValueSwitch.isOn else {
+            secondValue *= -1
+            return secondValue
+        }
+        return secondValue
+    }
 }
+
 
