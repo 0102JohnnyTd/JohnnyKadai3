@@ -26,14 +26,14 @@ final class ViewController: UIViewController {
         do {
             let firstValue = switchSignFirstValue()
             let secondValue = switchSignSecondValue()
-            var totalValue = 0
 
+            var totalValue = 0
             totalValue = try totalValue.addingReportingOverflowWithError(firstValue)
             totalValue = try totalValue.addingReportingOverflowWithError(secondValue)
 
             firstValueLabel.text = String(firstValue)
             secondValueLabel.text = String(secondValue)
-            resultLabel.text = String(firstValue + secondValue)
+            resultLabel.text = String(totalValue)
         } catch {
             switch error {
             case is OverflowError:
