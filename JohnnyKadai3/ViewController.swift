@@ -23,12 +23,25 @@ final class ViewController: UIViewController {
     @IBOutlet private weak var resultLabel: UILabel!
 
     @IBAction private func executeCalculation(_ sender: Any) {
-        let firstValue = switchSignFirstValue()
-        let secondValue = switchSignSecondValue()
-        firstValueLabel.text = String(firstValue)
-        secondValueLabel.text = String(secondValue)
+        do {
+            let firstValue = switchSignFirstValue()
+            let secondValue = switchSignSecondValue()
 
-        resultLabel.text = String(firstValue + secondValue)
+            var totalValue = 0
+            totalValue = try totalValue.addingReportingOverflowWithError(firstValue)
+            totalValue = try totalValue.addingReportingOverflowWithError(secondValue)
+
+            firstValueLabel.text = String(firstValue)
+            secondValueLabel.text = String(secondValue)
+            resultLabel.text = String(totalValue)
+        } catch {
+            switch error {
+            case is OverflowError:
+                resultLabel.text = "値が大きすぎるため扱うことができません"
+            default:
+                resultLabel.text = "不明のエラーが発生しました"
+            }
+        }
     }
 
     private func switchSignFirstValue() -> Int {

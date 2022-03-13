@@ -14,6 +14,8 @@
 		1C8EEA6E27D9639900041E56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C8EEA6D27D9639900041E56 /* Assets.xcassets */; };
 		1C8EEA7127D9639900041E56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C8EEA6F27D9639900041E56 /* LaunchScreen.storyboard */; };
 		1C8EEA7927DA062200041E56 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EEA7827DA062200041E56 /* UITextField+.swift */; };
+		1C8EEA7F27DC18D100041E56 /* OverflowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EEA7E27DC18D100041E56 /* OverflowError.swift */; };
+		1C8EEA8227DC191900041E56 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EEA8127DC191900041E56 /* Int+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		1C8EEA7027D9639900041E56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C8EEA7227D9639900041E56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C8EEA7827DA062200041E56 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		1C8EEA7E27DC18D100041E56 /* OverflowError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverflowError.swift; sourceTree = "<group>"; };
+		1C8EEA8127DC191900041E56 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 			children = (
 				1C8EEA6427D9639500041E56 /* AppDelegate.swift */,
 				1C8EEA6627D9639500041E56 /* SceneDelegate.swift */,
+				1C8EEA8027DC18F700041E56 /* Error */,
 				1C8EEA7A27DA062A00041E56 /* Extension */,
 				1C8EEA6827D9639500041E56 /* ViewController.swift */,
 				1C8EEA6A27D9639500041E56 /* Main.storyboard */,
@@ -74,8 +79,17 @@
 			isa = PBXGroup;
 			children = (
 				1C8EEA7827DA062200041E56 /* UITextField+.swift */,
+				1C8EEA8127DC191900041E56 /* Int+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		1C8EEA8027DC18F700041E56 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				1C8EEA7E27DC18D100041E56 /* OverflowError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,9 +185,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C8EEA6927D9639500041E56 /* ViewController.swift in Sources */,
+				1C8EEA7F27DC18D100041E56 /* OverflowError.swift in Sources */,
 				1C8EEA6527D9639500041E56 /* AppDelegate.swift in Sources */,
 				1C8EEA6727D9639500041E56 /* SceneDelegate.swift in Sources */,
 				1C8EEA7927DA062200041E56 /* UITextField+.swift in Sources */,
+				1C8EEA8227DC191900041E56 /* Int+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
