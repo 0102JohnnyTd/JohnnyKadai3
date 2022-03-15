@@ -24,12 +24,14 @@ final class ViewController: UIViewController {
 
     @IBAction private func executeCalculation(_ sender: Any) {
         do {
-            let firstValue = switchSignFirstValue()
-            let secondValue = switchSignSecondValue()
+            // 三項演算子で処理をコンパクトに実装
+            let firstValue = firstValueTextField.textToInt * (firstValueSwitch.isOn ? -1 : 1)
+            let secondValue = secondValueTextField.textToInt * (secondValueSwitch.isOn ? -1 : 1)
 
-            var totalValue = 0
-            totalValue = try totalValue.addingReportingOverflowWithError(firstValue)
-            totalValue = try totalValue.addingReportingOverflowWithError(secondValue)
+            // reduceを使って冗長なコードをコンパクトに実装
+            let totalValue = try [firstValue, secondValue].reduce(0, {
+                try $0.addingReportingOverflowWithError($1)
+            })
 
             firstValueLabel.text = String(firstValue)
             secondValueLabel.text = String(secondValue)
@@ -42,23 +44,5 @@ final class ViewController: UIViewController {
                 resultLabel.text = "不明のエラーが発生しました"
             }
         }
-    }
-
-    private func switchSignFirstValue() -> Int {
-        let firstValue = firstValueTextField.textToInt
-
-        guard !firstValueSwitch.isOn else {
-            return -firstValue
-        }
-        return firstValue
-    }
-
-    private func switchSignSecondValue() -> Int {
-        let secondValue = secondValueTextField.textToInt
-
-        guard !secondValueSwitch.isOn else {
-            return -secondValue
-        }
-        return secondValue
     }
 }
