@@ -90,19 +90,19 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lWe-LJ-plg">
                                         <rect key="frame" x="0.0" y="216" width="382" height="20.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ApP-rP-F1l">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Value" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ApP-rP-F1l">
                                                 <rect key="frame" x="0.0" y="0.0" width="127.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5k-ID-39Q">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5k-ID-39Q">
                                                 <rect key="frame" x="127.5" y="0.0" width="127" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mk0-k9-wLP">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second Value" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mk0-k9-wLP">
                                                 <rect key="frame" x="254.5" y="0.0" width="127.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -129,13 +129,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="firstValueLabel" destination="ApP-rP-F1l" id="JW9-rR-V3i"/>
-                        <outlet property="firstValueSwitch" destination="NgH-T9-vfo" id="Lgz-XF-djv"/>
-                        <outlet property="firstValueTextField" destination="g5O-4I-MeG" id="vPX-4F-jVa"/>
+                        <outlet property="firstValueLabel" destination="ApP-rP-F1l" id="5vp-tY-tFC"/>
                         <outlet property="resultLabel" destination="N4D-mo-m2L" id="Qut-CJ-IBP"/>
                         <outlet property="secondValueLabel" destination="mk0-k9-wLP" id="Rxu-p4-mEX"/>
-                        <outlet property="secondValueSwitch" destination="XB3-nm-fmX" id="mVX-LS-rkB"/>
-                        <outlet property="secondValueTextField" destination="3QG-9y-Olo" id="EV9-MW-8Qw"/>
+                        <outletCollection property="valueTextFields" destination="g5O-4I-MeG" collectionClass="NSMutableArray" id="Tiv-6M-qWv"/>
+                        <outletCollection property="valueTextFields" destination="3QG-9y-Olo" collectionClass="NSMutableArray" id="S01-xO-SlR"/>
+                        <outletCollection property="valueSwitches" destination="NgH-T9-vfo" collectionClass="NSMutableArray" id="eC3-Dr-gOm"/>
+                        <outletCollection property="valueSwitches" destination="XB3-nm-fmX" collectionClass="NSMutableArray" id="p0C-te-LMW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
